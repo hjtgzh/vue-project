@@ -1,6 +1,6 @@
 <template>
   	<div class="carousel-wrap">
-        <el-carousel trigger="click" height="150px">
+        <el-carousel trigger="click" height="200px" indicator-position="outside" :interval="5000">
             <el-carousel-item v-for="(item, index) in srcs" :key="index">
                 <div class="img-wrap">
                     <a :href="item.href">
@@ -29,16 +29,22 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-    .img-wrap{
-        margin-top: 10px;
-    }
-    .img-wrap{
-        img{
-            height: 100px;
+    .carousel-wrap{
+        .el-carousel{
+            .el-carousel__item{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .img-wrap{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    height: 100px;
+                    display: block;
+                }
+            }
         }
-    } 
-    .el-carousel__indicators{
-        background: #ccc;
-        width: 100%;
     }
 </style>

@@ -1,13 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
-import Carousel from '../components/carousel/Carousel.vue'
-
+import Home from '../components/home/Home.vue'
+import Layout from '../components/layout/Layout.vue'
+import Table from '../components/layout/Table.vue'
 Vue.use(Router)
 
 export default new Router({
     routes: [
         { path: '/', redirect: '/home' },
-        { path: '/home', component: Carousel }
+        { path: '/home', component: Home },
+        { path: '/layout',
+            component: Layout,
+            children: [
+                {
+                    path: 'table',
+                    component: Table
+                }
+            ]
+        },
+        { path: '/table', component: Table }
     ]
 })
