@@ -10,7 +10,7 @@
                     <el-menu-item-group>
                         <span slot="title">分组一</span>
                         <el-menu-item index="table">列表</el-menu-item>
-                        <el-menu-item index="1-2">选项2</el-menu-item>
+                        <el-menu-item index="form">表单</el-menu-item>
                     </el-menu-item-group>
                         <el-menu-item-group title="分组2">
                         <el-menu-item index="1-3">选项3</el-menu-item>
@@ -44,18 +44,17 @@
         data () {
             return {
                 isCollapse: false
-            }
+            };
         },
         methods: {
             handleSelect (key, keyPath) {
-                console.log(key, keyPath)
-                this.$router.push('/layout/table')
+                this.$router.push('/layout/' + key);
             },
             handleCollapse () {
-                this.isCollapse = !this.isCollapse
+                this.isCollapse = !this.isCollapse;
             }
         }
-    }
+    };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

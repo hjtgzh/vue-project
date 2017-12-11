@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="nav-wrap">
-            <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" router>
+            <el-menu :default-active="routerPath" class="el-menu-demo" mode="horizontal" @select="handleSelect" router>
                 <el-menu-item index="home">首页</el-menu-item>
                 <el-menu-item index="layout">布局</el-menu-item>
                 <el-menu-item index="1">处理中心</el-menu-item>
@@ -25,15 +25,21 @@
         name: 'app',
         data () {
             return {
-                activeIndex: 'home'
+                activeIndex: ''
+            };
+        },
+        computed: {
+            // 计算属性的 getter
+            routerPath: function () {
+                return this.$route.path.split('/')[1] || 'home';
             }
         },
         methods: {
             handleSelect (key, keyPath) {
-                console.log(key, keyPath)
+                this.$router.push('/' + key);
             }
         }
-    }
+    };
 </script>
 
 <style scoped lang="less">
