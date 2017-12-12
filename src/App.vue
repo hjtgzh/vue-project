@@ -2,8 +2,10 @@
     <div id="app">
         <div class="nav-wrap">
             <el-menu :default-active="routerPath" class="el-menu-demo" mode="horizontal" @select="handleSelect" router>
-                <el-menu-item index="home">首页</el-menu-item>
-                <el-menu-item index="layout">布局</el-menu-item>
+                <!-- <el-menu-item index="/home"><router-link to="/home">首页</router-link></el-menu-item> -->
+                <!-- <el-menu-item index="/layout"><router-link to="/layout">布局</router-link></el-menu-item> -->
+                <el-menu-item index="/home">首页</el-menu-item>
+                <el-menu-item index="/layout">布局</el-menu-item>
                 <el-menu-item index="1">处理中心</el-menu-item>
                 <el-submenu index="2">
                     <template slot="title">我的工作台</template>
@@ -31,12 +33,15 @@
         computed: {
             // 计算属性的 getter
             routerPath: function () {
-                return this.$route.path.split('/')[1] || 'home';
+                return '/' + this.$route.path.split('/')[1] || '/home';
             }
         },
         methods: {
             handleSelect (key, keyPath) {
-                this.$router.push('/' + key);
+                // const path = key === 'layout' ? '/layout/table' : '/' + key;
+                // const path = '/' + key;
+                // console.log(path);
+                // this.$router.push(path);
             }
         }
     };

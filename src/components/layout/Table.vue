@@ -69,15 +69,15 @@
                         tag: '公司'
                     }
                 ]
-            }
+            };
         },
         methods: {
             formatter (row, column) {
-                return row.address
+                return row.address;
             },
             filterTag (value, row) {
-                return row.tag === value
+                return row.tag === value;
             }
         }
-    }
+    };
 </script>

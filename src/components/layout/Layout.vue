@@ -1,7 +1,7 @@
 <template>
     <div class="content">
         <div class="layout-wrap">
-            <el-menu class="el-menu-vertical-demo" @select="handleSelect" :collapse="isCollapse">
+            <el-menu class="el-menu-vertical-demo" @select="handleSelect" :collapse="isCollapse" default-active="table">
                 <el-submenu index="1">
                     <template slot="title">
                         <i class="el-icon-location"></i>

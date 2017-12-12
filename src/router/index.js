@@ -11,9 +11,11 @@ export default new Router({
     routes: [
         { path: '/', redirect: '/home' },
         { path: '/home', component: Home },
+        // { path: '/layout', redirect: '/layout/table' },
+        // { path: '/layout/table', component: Table }
         { path: '/layout',
             component: Layout,
-            // redirect: '/layout/table',
+            redirect: '/layout/table',
             children: [
                 {
                     path: 'table',
