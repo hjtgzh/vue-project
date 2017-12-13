@@ -1,0 +1,13 @@
+import {
+    INCREMENT
+} from './mutationTypes';
+
+// import {setStore, getStore} from '../config/mUtils';
+
+// import {localapi, proapi} from 'src/config/env';
+
+export default {
+    [INCREMENT] (state, number) {
+        state.number = number;
+    }
+};
